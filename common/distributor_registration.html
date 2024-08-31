@@ -1,0 +1,80 @@
+{% extends 'common/base.html' %}
+{% block header %}
+
+{% if msg %}
+<script>
+    alert("{{msg}}")
+</script>
+
+{% endif %}
+<style>
+    input{
+        border-radius: 10px;
+    }
+</style>
+
+<center>
+    <div class="banner-bottom">
+        <div class="container">
+            <!-- <h1 class="title-w3-agileits inner">Distributor</h1> -->
+            <p class="quia"> </p>
+            <div class="col-md-8 wthree_contact_left">
+                <h4 style="margin-left: 380px; font-size: 30px;">Registration here</h4>
+                <form action="#" method="post">
+                    {% csrf_token %}
+                    <div class="col-md-6"></div>
+
+                    <div class="col-md-6 wthree_contact_left_grid">
+                        <input type="text" name="name" placeholder="Name">
+                    </div>
+                    <div class="clearfix"> </div>
+                    <br>
+                    <div class="col-md-6"></div>
+
+                    <div class="col-md-6 wthree_contact_left_grid">
+                        <input type="text" maxlength="10" pattern="[789][0-9]{9}" name="phone" placeholder="Phone">
+                    </div>
+
+                    <div class="clearfix"> </div>
+                    <div class="col-md-6"></div>
+
+                    <div class="col-md-6 wthree_contact_left_grid">
+                        <input type="email" name="email" placeholder="E-Mail">
+                    </div>
+                    <div class="clearfix"> </div>
+                    <br>
+                    <div class="col-md-6"></div>
+
+                    <div class="col-md-6 wthree_contact_left_grid">
+                        <input type="text" name="address" placeholder="Address">
+                    </div>
+                    <div class="clearfix"> </div>
+                    <br>
+                    <div class="col-md-6"></div>
+
+                    <div class="col-md-6 wthree_contact_left_grid">
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="clearfix"> </div>
+                    <br>
+                    <div class="col-md-6"></div>
+
+                    <div class="col-md-6 wthree_contact_left_grid">
+                        <input type="password" name="cnfpassword" placeholder="Confirm Password">
+                    </div>
+                    <div class="clearfix"> </div>
+                    <br>
+                    <input type="submit" value="REGISTER" style="margin-left: 380px; width: 100px; border-radius: 10px;">
+
+                </form>
+            </div>
+            <div class="clearfix"> </div>
+
+        </div>
+    </div>
+    <!-- //contact -->
+</center>
+
+
+
+{% endblock %}
