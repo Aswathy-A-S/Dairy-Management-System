@@ -1,0 +1,28 @@
+{% extends 'distributor/base.html' %}
+{% block header %}<br/><br/>
+<h2 class="title-w3-agileits inner">Sell Report for {{ product.fpdtname }}</h2><br>
+<table id="customers">
+    <tr>
+        <th>Customer Name</th>
+        <th>Quantity</th>
+        <th>Amount</th>
+        <th>Rating</th>
+        <th>Payment Status</th>
+    </tr>
+    {% for order in sold_products %}
+    <tr>
+        <td>{{ order.username }}</td>
+        <td>{{ order.qty }}</td>
+        <td>{{ order.amount }}</td>
+        <td>
+            {% if order.rating %}
+                {{ order.rating }}
+            {% else %}
+                No rating yet
+            {% endif %}
+        </td>
+        <td>{{ order.payment }}</td>
+    </tr>
+    {% endfor %}
+</table><br><br>
+{% endblock %}
